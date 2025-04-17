@@ -251,14 +251,127 @@ VALUES
     ) 
     ;
 
+--adding data to movie_studios
+INSERT INTO movie_studios (
+  movie_id
+  , studio_id
+)
+VALUES 
+    (
+    1
+    , 1
+    )
+    , (
+    2
+    , 1
+    )
+    , (
+    3
+    , 1
+    );
+
+
+--adding data into movie_roles
+INSERT INTO movie_roles (
+  movie_id
+  , actor_id
+  , character_name
+)
+VALUES 
+    (
+        1
+        , 1
+        , "Bruce Wayne"
+    )
+    , (
+        1
+        , 2
+        , "Alfred"
+    )
+    , (
+        1
+        , 3
+        , "Ra's Al Ghul"
+    )
+    , (
+        1
+        , 4
+        , "Rachel Dawes"
+    )
+    , (
+        1
+        , 5
+        , "Commissioner Gordon"
+    )
+    , (
+        2
+        , 1
+        , "Bruce Wayne"
+    )
+    , (
+        2
+        , 6
+        , "Joker"
+    )
+    , (
+        2
+        , 7
+        , "Harvey Dent"
+    )
+    , (
+        2
+        , 2
+        , "Alfred"
+    )
+    , (
+        2
+        , 8
+        , "Rachel Dawes"
+    )
+    , (
+        3
+        , 1
+        , "Bruce Wayne"
+    )
+    , (
+        3
+        , 5
+        , "Commissioner Gordon"
+    )
+    , (
+        3
+        , 9
+        , "Bane"
+    )
+    , (
+        3
+        , 10
+        , "John Blake"
+    )
+    , (
+        3
+        , 11
+        , "Selina Kyle"
+    )
+    ;
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
-
+select 
+    mov.movie_name
+    , mov.release_year
+    , mov.mpaa_rating
+    , stu.studio_name
+from movies as mov
+    inner join movie_studios as ms
+        on mov.id = ms.movie_id
+    inner join studios as stu
+        on stu.id = ms.studio_id
+;
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
@@ -267,4 +380,13 @@ VALUES
 
 
 -- The SQL statement for the cast output
--- TODO!
+select
+    mov.movie_name
+    , act.full_name
+    , mr.character_name
+from movies as mov
+    inner join movie_roles as mr
+        on mov.id = mr.movie_id
+    inner join actors as act
+        on act.id = mr.actor_id
+;
