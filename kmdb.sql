@@ -111,14 +111,145 @@
 .headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
--- TODO!
+
+DROP TABLE IF EXISTS studios;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS movie_studios;
+DROP TABLE IF EXISTS movie_roles;
 
 -- Create new tables, according to your domain model
--- TODO!
+
+CREATE TABLE studios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+  , studio_name TEXT
+);
+
+CREATE TABLE movies (
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+  , movie_name TEXT
+  , release_year INTEGER
+  , mpaa_rating TEXT
+);
+
+CREATE TABLE actors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+  , first_name TEXT
+  , last_name TEXT
+  , full_name TEXT
+);
+
+CREATE TABLE movie_studios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+  , movie_id INTEGER
+  , studio_id INTEGER
+);
+
+CREATE TABLE movie_roles (
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+  , movie_id INTEGER
+  , actor_id INTEGER
+  , character_name TEXT
+);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
--- TODO!
+
+--adding data to studios
+INSERT INTO studios (
+  studio_name
+)
+VALUES (
+  "Warner Bros."
+);
+
+--adding data to movies
+INSERT INTO movies (
+  movie_name
+  , release_year
+  , mpaa_rating
+)
+VALUES 
+    (
+    "Batman Begins"
+    , 2005
+    , "PG-13"
+    )
+    , (
+    "The Dark Knight"
+    , 2008
+    , "PG-13"
+    )
+    , (
+    "The Dark Knight Rises"
+    , 2012
+    , "PG-13"
+    )
+;
+
+--adding data to actors
+INSERT INTO actors (
+  first_name
+  , last_name
+  , full_name
+)
+VALUES 
+    (
+    "Christian"
+    , "Bale"
+    , "Christian Bale"
+    ) 
+    , (
+    "Michael"
+    , "Caine"
+    , "Michael Caine"
+    ) 
+    , (
+    "Liam"
+    , "Neeson"
+    , "Liam Neeson"
+    ) 
+    , (
+    "Katie"
+    , "Holmes"
+    , "Katie Holmes"
+    ) 
+    , (
+    "Gary"
+    , "Oldman"
+    , "Gary Oldman"
+    ) 
+    , (
+    "Heath"
+    , "Ledger"
+    , "Heath Ledger"
+    ) 
+    , (
+    "Aaron"
+    , "Eckhart"
+    , "Aaron Eckhart"
+    ) 
+    , (
+    "Maggie"
+    , "Gyllenhaal"
+    , "Maggie Gyllenhaal"
+    ) 
+    , (
+    "Tom"
+    , "Hardy"
+    , "Tom Hardy"
+    ) 
+    , (
+    "Joseph"
+    , "Gordon-Levitt"
+    , "Joseph Gordon-Levitt"
+    ) 
+    , (
+    "Anne"
+    , "Hathaway"
+    , "Anne Hathaway"
+    ) 
+    ;
 
 -- Prints a header for the movies output
 .print "Movies"
