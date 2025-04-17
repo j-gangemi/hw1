@@ -257,18 +257,10 @@ INSERT INTO movie_studios (
   , studio_id
 )
 VALUES 
-    (
-    1
-    , 1
-    )
-    , (
-    2
-    , 1
-    )
-    , (
-    3
-    , 1
-    );
+    (1, 1)
+    , (2, 1)
+    , (3, 1)
+;
 
 
 --adding data into movie_roles
@@ -278,82 +270,36 @@ INSERT INTO movie_roles (
   , character_name
 )
 VALUES 
-    (
-        1
-        , 1
-        , "Bruce Wayne"
-    )
-    , (
-        1
-        , 2
-        , "Alfred"
-    )
-    , (
-        1
-        , 3
-        , "Ra's Al Ghul"
-    )
-    , (
-        1
-        , 4
-        , "Rachel Dawes"
-    )
-    , (
-        1
-        , 5
-        , "Commissioner Gordon"
-    )
-    , (
-        2
-        , 1
-        , "Bruce Wayne"
-    )
-    , (
-        2
-        , 6
-        , "Joker"
-    )
-    , (
-        2
-        , 7
-        , "Harvey Dent"
-    )
-    , (
-        2
-        , 2
-        , "Alfred"
-    )
-    , (
-        2
-        , 8
-        , "Rachel Dawes"
-    )
-    , (
-        3
-        , 1
-        , "Bruce Wayne"
-    )
-    , (
-        3
-        , 5
-        , "Commissioner Gordon"
-    )
-    , (
-        3
-        , 9
-        , "Bane"
-    )
-    , (
-        3
-        , 10
-        , "John Blake"
-    )
-    , (
-        3
-        , 11
-        , "Selina Kyle"
-    )
-    ;
+    (1, 1, "Bruce Wayne")
+    , 
+    (1, 2, "Alfred")
+    , 
+    (1, 3, "Ra's Al Ghul")
+    , 
+    (1, 4, "Rachel Dawes")
+    , 
+    (1, 5, "Commissioner Gordon")
+    , 
+    (2, 1, "Bruce Wayne")
+    , 
+    (2, 6, "Joker")
+    , 
+    (2, 7, "Harvey Dent")
+    , 
+    (2, 2, "Alfred")
+    , 
+    (2, 8, "Rachel Dawes")
+    , 
+    (3, 1, "Bruce Wayne")
+    , 
+    (3, 5, "Commissioner Gordon")
+    , 
+    (3, 9, "Bane")
+    , 
+    (3, 10, "John Blake")
+    , 
+    (3, 11, "Selina Kyle")
+;
 
 -- Prints a header for the movies output
 .print "Movies"
